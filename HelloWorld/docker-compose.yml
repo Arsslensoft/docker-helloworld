@@ -1,0 +1,22 @@
+version: '2.0'
+services:
+    hello-world-1:
+        image: arsslen/hello-world
+        ports:
+            - "3002:3000"
+        expose:
+            - 3002
+        networks:
+            - arsslens-network
+    hello-world-2:
+        image: arsslen/hello-world
+        ports:
+            - "3003:3000"
+        expose:
+            - 3003
+        networks:
+            - arsslens-network
+
+networks:
+    arsslens-network:
+        driver: bridge
